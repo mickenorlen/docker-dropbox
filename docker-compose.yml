@@ -9,8 +9,3 @@ services:
       - "./dbox/Dropbox:/dbox/Dropbox"
     restart: always
 
-networks:
-  default:
-    external:
-      name: nginx-proxy
-
