@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  dropbox:
+    container_name: st_dropbox
+    image: janeczku/dropbox
+  # default dir: /dbox/Dropbox
+    volumes:
+      - "./dbox/.dropbox:/dbox/.dropbox"
+      - "./dbox/Dropbox:/dbox/Dropbox"
+    restart: always
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
