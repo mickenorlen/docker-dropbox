@@ -5,7 +5,7 @@ services:
     image: janeczku/dropbox
   # default dir: /dbox/Dropbox
     volumes:
-      - "./dbox/.dropbox:/dbox/.dropbox"
-      - "./dbox/Dropbox:/dbox/Dropbox"
+      - ".dropbox:/dbox/.dropbox"
+      - "Dropbox:/dbox/Dropbox"
     restart: always
 
