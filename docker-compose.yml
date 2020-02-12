@@ -2,10 +2,14 @@ version: "3.5"
 services:
   dropbox:
     container_name: st_dropbox
-    image: janeczku/dropbox
+    image: otherguy/dropbox
+    #build: https://github.com/thomashilzendegen/docker-dropbox.git#libatomic-fix
   # default dir: /dbox/Dropbox
     volumes:
-      - ".dropbox:/dbox/.dropbox"
-      - "Dropbox:/dbox/Dropbox"
+      - "./.dropbox:/opt/dropbox/.dropbox"
+      - "./Dropbox:/opt/dropbox/Dropbox"
     restart: always
+    environment:
+      DROPBOX_UID: 1000
+      DROPBOX_GID: 1000
 
